@@ -1,0 +1,11 @@
+namePrefix: dev-
+commonLabels:
+  variant: dev
+  org: acmeCorporation
+commonAnnotations:
+  note: Hello, I am dev!
+bases:
+- ../../base
+patches:
+- deployment.yaml
+- map.yaml
