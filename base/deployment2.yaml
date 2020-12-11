@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: the-deployment-v1
+  name: the-deployment-v2
 spec:
   replicas: 3
   selector:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: the-container
-        image: monopole/hello:1
+        image: monopole/hello:2
         command: ["/hello",
                   "--port=8080",
                   "--enableRiskyFeature=$(ENABLE_RISKY)"]
