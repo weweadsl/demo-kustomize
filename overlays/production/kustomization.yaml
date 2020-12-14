@@ -1,11 +1,13 @@
-namePrefix: production-
-commonLabels:
-  variant: production
-  org: acmeCorporation
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
 commonAnnotations:
   note: Hello, I am production!
 bases:
 - ../../base
-patches:
-- deployment.yaml
-- deployment2.yaml
+images:
+  - name: monopole/hello # match images with this name
+  - newTag: 1 # override the tag
+
+patchesStrategicMerge:
+  - deployment.yaml
+  - deployment2.yaml
