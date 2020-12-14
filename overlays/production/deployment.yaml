@@ -4,3 +4,8 @@ metadata:
   name: the-deployment-v1
 spec:
   replicas: 2
+  template:
+    spec:
+      containers:
+        - name: the-container
+          image: monopole/hello:1

@@ -4,9 +4,6 @@ commonAnnotations:
   note: Hello, I am production!
 bases:
 - ../../base
-images:
-  - name: monopole/hello # match images with this name
-  - newTag: 1 # override the tag
 
 patchesStrategicMerge:
   - deployment.yaml
