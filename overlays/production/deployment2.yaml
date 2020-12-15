@@ -3,10 +3,4 @@ kind: Deployment
 metadata:
   name: the-deployment-v2
 spec:
-  replicas: 1
-
-  template:
-    spec:
-      containers:
-        - name: the-container
-          image: monopole/hello:2
+  replicas: 2
