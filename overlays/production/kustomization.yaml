@@ -7,4 +7,3 @@ bases:
 
 patchesStrategicMerge:
   - deployment.yaml
-  - deployment2.yaml
