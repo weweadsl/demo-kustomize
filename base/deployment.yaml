@@ -15,7 +15,6 @@ spec:
       containers:
       - name: the-container
         image: gcr.io/delta-cosmos-294006/helloworld
-        imagePullPolicy: IfNotPresent
         command: ["/hello",
                   "--port=8080",
                   "--enableRiskyFeature=$(ENABLE_RISKY)"]
