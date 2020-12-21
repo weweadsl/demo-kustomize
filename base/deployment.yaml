@@ -20,8 +20,11 @@ spec:
         ports:
         - containerPort: 8080
         env:
-        - name: ABC
-          value: ABC
+        - name: ABC # 設定環境變數
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: ABC
         - name: ALT_GREETING
           valueFrom:
             configMapKeyRef:
