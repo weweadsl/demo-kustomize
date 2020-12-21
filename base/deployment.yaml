@@ -15,9 +15,8 @@ spec:
       containers:
       - name: the-container
         image: gcr.io/delta-cosmos-294006/helloworld
-        command: ["app",
-                  "--port=8080",
-                  "--enableRiskyFeature=$(ENABLE_RISKY)"]
+        command:
+          - app
         ports:
         - containerPort: 8080
         env:
