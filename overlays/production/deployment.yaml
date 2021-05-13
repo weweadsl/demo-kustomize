@@ -8,7 +8,7 @@ spec:
   template:
     metadata:
       labels:
-        run: test-nginx
+        app: test-nginx
     spec:
       containers:
         name: test-nginx
