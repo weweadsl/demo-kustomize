@@ -6,6 +6,9 @@ metadata:
 spec:
   replicas: 2
   template:
+    metadata:
+      labels:
+        run: test-nginx
     spec:
       containers:
         name: test-nginx
