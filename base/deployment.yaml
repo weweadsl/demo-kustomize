@@ -1,37 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: the-deployment-v1
+  namespace: test
+  name: test-nginx
 spec:
-  replicas: 3
   selector:
     matchLabels:
-      deployment: hello
+      app: test-nginx
+  replicas: 1 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
-        deployment: hello
+        app: test-nginx
     spec:
       containers:
-      - name: the-container
-        image: gcr.io/delta-cosmos-294006/helloworld
-        command:
-          - app
-        ports:
-        - containerPort: 8080
-        env:
-        - name: ABC # 設定環境變數
-          valueFrom:
-            secretKeyRef:
-              name: mysecret
-              key: AAA
-        - name: ALT_GREETING
-          valueFrom:
-            configMapKeyRef:
-              name: the-map
-              key: altGreeting
-        - name: ENABLE_RISKY
-          valueFrom:
-            configMapKeyRef:
-              name: the-map
-              key: enableRisky
+        - name: nginx
+          image: nginx:1.14.2
+          ports:
+            - containerPort: 80
