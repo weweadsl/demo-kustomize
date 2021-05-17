@@ -4,6 +4,9 @@ metadata:
   namespace: test
   name: test-nginx
 spec:
+  selector:
+    matchLabels:
+      app: test-nginx
   replicas: 2
   template:
     metadata:
@@ -11,7 +14,7 @@ spec:
         app: test-nginx
     spec:
       containers:
-        name: test-nginx
+        name: nginx
         resources:
           limits:
             cpu: 100m
