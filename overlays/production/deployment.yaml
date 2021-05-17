@@ -5,12 +5,14 @@ metadata:
   name: test-nginx
 spec:
   replicas: 2
-  containers:
-    - name: nginx
-      resources:
-        limits:
-          cpu: 300m
-          memory: 128Mi
-        requests:
-          cpu: 50m
-          memory: 64Mi
+  template:
+    spec:
+      containers:
+        - name: nginx
+          resources:
+            limits:
+              cpu: 300m
+              memory: 128Mi
+            requests:
+              cpu: 50m
+              memory: 64Mi
